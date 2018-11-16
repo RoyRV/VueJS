@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <p>'{{ message }}'</p>
+            <input v-model.trim="message" />
+            <button v-on:click="cambiaText">Cambiame</button>
+        </div>
+        <div>
+            <p> textarea </p>
+            <textarea v-model="area"></textarea>
+        </div>
+        <div>
+            <p>checkbox</p>
+            <label for="txtSeleccionado">Seleccionado</label>
+            <input id="txtSeleccionado" name="txtSeleccionado" type="checkbox" v-model="isSelected" />
+            <small>selected : {{isSelected}}</small>
+        </div>
+        <div>
+            <p>checklist</p>
+            <label>
+                <input type="checkbox" value="option1" v-model="listOfCheckboxes" />
+            </label>
+            <label>
+                <input type="checkbox" value="option2" v-model="listOfCheckboxes" />
+            </label>
+            <small>selected : {{listOfCheckboxes}}</small>
+        </div>
+        <div>
+            <p>Radio buttons</p>
+            <label>
+                <input type="radio" value="optRdButton1" v-model="listOfRadioButton" />
+            </label>
+            <label>
+                <input type="radio" value="optRdButton2" v-model="listOfRadioButton" />
+            </label>
+            <small>selected : {{listOfRadioButton}}</small>
+        </div>
+        <div>
+            <p>Dropdown</p>
+            <select v-model="selectedDropDownOption">
+                    <option value="optionComboBox1">optionComboBox1</option>
+                    <option value="optionComboBox2">optionComboBox2</option>
+                    <option value="optionComboBox3">optionComboBox3</option>
+            </select>
+            <small>selected : {{selectedDropDownOption}}</small>
+        </div>
+        <div>
+            <p>Dropdown multiple</p>
+            <select multiple v-model="selectedDropDownOptionMultiple">
+                    <option value="opcionMultiple1">opcionMultiple1</option>
+                    <option value="opcionMultiple2">optionComboBox2</option>
+            </select>
+            <small>selected : {{selectedDropDownOptionMultiple}}</small>
+        </div>
+        <div>
+            <ol>
+                <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.key">
+                </todo-item>
+            </ol>
+        </div>
+    </div>
+    <script type="text/x-template" id="todoItem-template">
+        <li># : {{todo.text}}</li>
+    </script>
+    <!-- <script src="todoItem.componet.vue"></script> -->
+    <script src="todoItem.componet.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
