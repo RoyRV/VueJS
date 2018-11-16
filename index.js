@@ -17,13 +17,25 @@ var app = new Vue({
         { id:0, text: 'Learn JavaScript' },
         { id:1,text: 'Learn Vue' },
         { id:2,text: 'Build something awesome' }
-      ]
+      ],
+      inputValue : ''
     } ,
 
     methods: {
-        cambiaText : cambiaText
+        cambiaText : cambiaText,
+        executeSearch: executeSearch
     }
   }) 
   function cambiaText(texto,event){
     this.primerMensaje = texto;
+  }
+  function executeSearch(){
+    console.log("executeSearch");
+    if(this.inputValue){
+      console.log("if");
+      document.forms[0].submit();
+    }
+    else {
+      console.log("else")
+    }
   }
