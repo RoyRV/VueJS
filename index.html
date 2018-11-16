@@ -8,9 +8,9 @@
 <body>
     <div id="app">
         <div>
-            <p>'{{ message }}'</p>
-            <input v-model.trim="message" />
-            <button v-on:click="cambiaText">Cambiame</button>
+            <p>'{{ primerMensaje }}'</p>
+            <input v-model.lazy.trim="segundoMensaje" />
+            <button v-on:click="cambiaText(segundoMensaje,$event)">Cambiame</button>
         </div>
         <div>
             <p> textarea </p>
