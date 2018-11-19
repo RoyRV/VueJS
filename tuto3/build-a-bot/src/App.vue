@@ -10,7 +10,8 @@
       </nav>
     </header>
     <main>
-    <dashboard></dashboard>
+    <!-- <dashboard></dashboard> -->
+    <RobotBuilder />
     </main>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
@@ -18,12 +19,12 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue';
-import Dashboard from './components/Dashboard.vue';
-
+import Dashboard from './home/Dashboard.vue';
+import RobotBuilder from './build/RobotBuilder.vue';
 export default {
   name: 'app',
   components: {
-    Dashboard,
+    RobotBuilder,
     // HelloWorld,
   },
 };

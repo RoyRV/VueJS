@@ -26,7 +26,7 @@ export default {
         { title: "Self-Reliance", author: "Ralph Waldo Emerson" },
         { title: "American Gods", author: "Neil Gaiman" },
         { title: "Amusing Ourselves to Death", author: "Neil Postman" }
-      ]
+      ],
     };
   },
   methods : {
@@ -35,7 +35,7 @@ export default {
               title : bookTitle,
               author : bookAuthor
           })
-      }
+      },
   }
 };
 </script>
