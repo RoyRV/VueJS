@@ -34,10 +34,10 @@ var app = new Vue({
     filtradorMonto :0,
     listadoObjetosVForVIF :[
       {nombre : "nombre1",val : 1},
-      {nombre : "nombre2",val : 2},
-      {nombre : "nombre3",val : 3},
       {nombre : "nombre4",val : 40},
-      {nombre : "nombre5",val : 80}
+      {nombre : "nombre2",val : 2},
+      {nombre : "nombre5",val : 80},
+      {nombre : "nombre3",val : 3}
     ]
   },
 
@@ -48,7 +48,8 @@ var app = new Vue({
     parentStopClick:parentStopClick,
     executeStopSearch : executeStopSearch,
     executeRightClick : executeRightClick ,
-    executeLeftClick : executeLeftClick
+    executeLeftClick : executeLeftClick,
+    sortClickList:sortClickList
   }
 })
 
@@ -80,4 +81,9 @@ function executeLeftClick(){
 }
 function executeRightClick(){
   console.log("executeRightClick");
+}
+function sortClickList(){
+  this.listadoObjetosVForVIF.sort(function(a, b) {
+    return a.val - b.val;
+});
 }
