@@ -1,4 +1,3 @@
-
 var app = new Vue({
   el: '#app',
 
@@ -10,7 +9,11 @@ var app = new Vue({
     listOfCheckboxes: [],
     listOfRadioButton: '',
     selectedDropDownOption: '',
-    selectedDropDownOptionMultiple: [
+    optionsForDropDown : [
+      "optionComboBox1","optionComboBox2","optionComboBox3"
+    ],
+    selectedDropDownMultiple : [],
+    optionsForDropDownMultiple: [
       'opcionMultiple1', 'opcionMultiple2'
     ],
     groceryList: [
@@ -31,6 +34,7 @@ var app = new Vue({
     executeLeftClick : executeLeftClick
   }
 })
+
 function cambiaText(texto, event) {
   this.primerMensaje = texto;
 }

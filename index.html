@@ -21,6 +21,9 @@
             <label for="txtSeleccionado">Seleccionado</label>
             <input id="txtSeleccionado" name="txtSeleccionado" type="checkbox" v-model="isSelected" />
             <small>selected : {{isSelected}}</small>
+
+            <small v-if="isSelected">IF-SI</small>
+            <small v-if="!isSelected">IF-NO</small>
         </div>
         <div>
             <p>checklist</p>
@@ -45,19 +48,16 @@
         <div>
             <p>Dropdown</p>
             <select v-model="selectedDropDownOption">
-                <option value="optionComboBox1">optionComboBox1</option>
-                <option value="optionComboBox2">optionComboBox2</option>
-                <option value="optionComboBox3">optionComboBox3</option>
+                <option v-for="opt in optionsForDropDown" :value="opt">{{opt}}</option>
             </select>
             <small>selected : {{selectedDropDownOption}}</small>
         </div>
         <div>
             <p>Dropdown multiple</p>
-            <select multiple v-model="selectedDropDownOptionMultiple">
-                <option value="opcionMultiple1">opcionMultiple1</option>
-                <option value="opcionMultiple2">optionComboBox2</option>
+            <select multiple v-model="selectedDropDownMultiple">
+                <option v-for="opt in optionsForDropDownMultiple" :value="opt">{{opt}}</option>
             </select>
-            <small>selected : {{selectedDropDownOptionMultiple}}</small>
+            <small>selected : {{selectedDropDownMultiple}}</small>
         </div>
         <div>
             <ol>
@@ -86,7 +86,7 @@
             </div>
         </div>
         <div>
-            <p>mouse  click</p>
+            <p>mouse click</p>
             <div>
                 <button type="button" v-on:click.left="executeLeftClick">
                     Left
