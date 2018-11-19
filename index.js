@@ -9,20 +9,20 @@ var app = new Vue({
     listOfCheckboxes: [],
     listOfRadioButton: '',
     selectedDropDownOption: '',
-    optionsForDropDown : [
-      "optionComboBox1","optionComboBox2","optionComboBox3"
+    optionsForDropDown: [
+      "optionComboBox1", "optionComboBox2", "optionComboBox3"
     ],
-    selectedDropDownMultiple : [],
+    selectedDropDownMultiple: [],
     optionsForDropDownMultiple: [
       'opcionMultiple1', 'opcionMultiple2'
     ],
-    selectedDropDownOptionObject : '',
-    optionsDropDownObjectArray : [
+    selectedDropDownOptionObject: '',
+    optionsDropDownObjectArray: [
       {
-        key : 'key1' , val : 'val1'
+        key: 'key1', val: 'val1'
       },
       {
-        key : 'key2' , val : 'val2'
+        key: 'key2', val: 'val2'
       }
     ],
     groceryList: [
@@ -31,13 +31,13 @@ var app = new Vue({
       { id: 2, text: 'Build something awesome' }
     ],
     inputValue: '',
-    filtradorMonto :0,
-    listadoObjetosVForVIF :[
-      {nombre : "nombre1",val : 1},
-      {nombre : "nombre4",val : 40},
-      {nombre : "nombre2",val : 2},
-      {nombre : "nombre5",val : 80},
-      {nombre : "nombre3",val : 3}
+    filtradorMonto: 0,
+    listadoObjetosVForVIF: [
+      { nombre: "nombre1", val: 1 },
+      { nombre: "nombre4", val: 40 },
+      { nombre: "nombre2", val: 2 },
+      { nombre: "nombre5", val: 80 },
+      { nombre: "nombre3", val: 3 }
     ]
   },
 
@@ -45,11 +45,12 @@ var app = new Vue({
     cambiaText: cambiaText,
     executeSearch: executeSearch,
     grandparentStopClick: grandparentStopClick,
-    parentStopClick:parentStopClick,
-    executeStopSearch : executeStopSearch,
-    executeRightClick : executeRightClick ,
-    executeLeftClick : executeLeftClick,
-    sortClickList:sortClickList
+    parentStopClick: parentStopClick,
+    executeStopSearch: executeStopSearch,
+    executeRightClick: executeRightClick,
+    executeLeftClick: executeLeftClick,
+    sortClickList: sortClickList,
+    sortReversClickList: sortReversClickList
   }
 })
 
@@ -66,24 +67,27 @@ function executeSearch() {
     console.log("else")
   }
 }
-function executeStopSearch (){
+function executeStopSearch() {
   console.log("executeStopSearch");
 }
-function parentStopClick (){
+function parentStopClick() {
   console.log("parentStopClick");
 }
-function grandparentStopClick (){
+function grandparentStopClick() {
   console.log("grandparentStopClick");
 }
 
-function executeLeftClick(){
+function executeLeftClick() {
   console.log("executeLeftClick");
 }
-function executeRightClick(){
+function executeRightClick() {
   console.log("executeRightClick");
 }
-function sortClickList(){
-  this.listadoObjetosVForVIF.sort(function(a, b) {
+function sortClickList() {
+  this.listadoObjetosVForVIF.sort(function (a, b) {
     return a.val - b.val;
-});
+  });
+}
+function sortReversClickList() {
+  this.listadoObjetosVForVIF.reverse();
 }

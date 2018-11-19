@@ -110,6 +110,7 @@
                 <input v-model="filtradorMonto" type="range" min="0" max="100">
                 <small>{{filtradorMonto}}</small>
                 <button type="button" v-on:click="sortClickList">Sort</button>
+                <button type="button" v-on:click="sortReversClickList">Reverse</button>
                 <h4>Listado</h4>
                 <ul>
                     <li v-for="item in listadoObjetosVForVIF"
