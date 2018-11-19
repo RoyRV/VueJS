@@ -2,7 +2,7 @@
       <div>
     <div class="top-row">
       <div class="top part">
-        <img v-bind:src="availableParts.heads[selectedHeadIndex].src" title="head"/>
+        <img v-bind:src="selectedRobot.head.src" title="head"/>
         <button class="prev-selector"
                 v-on:click="selectPreviousHead()">&#9668;
         </button>
@@ -13,7 +13,7 @@
     </div>
     <div class="middle-row">
       <div class="left part">
-        <img v-bind:src="availableParts.arms[selectedLeftArmIndex].src" title="left arm"/>
+        <img v-bind:src="selectedRobot.leftArm.src" title="left arm"/>
         <button class="prev-selector"
         v-on:click="selectPreviousLeftArm()">&#9650;
         </button>
@@ -22,19 +22,19 @@
          </button>
       </div>
       <div class="center part">
-        <img v-bind:src="availableParts.torsos[selectedTorsoIndex].src"  title="left arm"/>
+        <img v-bind:src="selectedRobot.torso.src"  title="left arm"/>
         <button class="prev-selector"  v-on:click="selectPreviousTorso()">&#9668;</button>
         <button class="next-selector"  v-on:click="selectNextTorso()">&#9658;</button>
       </div>
       <div class="right part">
-        <img  v-bind:src="availableParts.arms[selectedRightArmIndex].src"  title="left arm"/>
+        <img  v-bind:src="selectedRobot.rightArm.src"  title="left arm"/>
         <button class="prev-selector"  v-on:click="selectPreviousRightArm()">&#9650;</button>
         <button class="next-selector"  v-on:click="selectNextRightArm()">&#9660;</button>
       </div>
     </div>
     <div class="bottom-row">
       <div class="bottom part">
-        <img  v-bind:src="availableParts.bases[selectedBaseIndex].src" title="left arm"/>
+        <img  v-bind:src="selectedRobot.base.src" title="left arm"/>
         <button class="prev-selector" v-on:click="selectPreviousBase()">&#9668;</button>
         <button class="next-selector" v-on:click="selectNextBase()">&#9658;</button>
       </div>
@@ -60,8 +60,8 @@ export default {
       selectedHeadIndex: 0,
       selectedLeftArmIndex: 0,
       selectedRightArmIndex: 0,
-      selectedTorsoIndex : 0,
-      selectedBaseIndex : 0
+      selectedTorsoIndex: 0,
+      selectedBaseIndex: 0
     };
   },
   methods: {
@@ -124,6 +124,17 @@ export default {
         this.selectedBaseIndex,
         availableParts.bases.length
       );
+    }
+  },
+  computed: {
+    selectedRobot() {
+      return {
+        head: availableParts.heads[this.selectedHeadIndex],
+        leftArm: availableParts.arms[this.selectedLeftArmIndex],
+        rightArm: availableParts.arms[this.selectedRightArmIndex],
+        torso: availableParts.torsos[this.selectedTorsoIndex],
+        base: availableParts.bases[this.selectedBaseIndex]
+      };
     }
   }
 };
