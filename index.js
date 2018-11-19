@@ -16,6 +16,15 @@ var app = new Vue({
     optionsForDropDownMultiple: [
       'opcionMultiple1', 'opcionMultiple2'
     ],
+    selectedDropDownOptionObject : '',
+    optionsDropDownObjectArray : [
+      {
+        key : 'key1' , val : 'val1'
+      },
+      {
+        key : 'key2' , val : 'val2'
+      }
+    ],
     groceryList: [
       { id: 0, text: 'Learn JavaScript' },
       { id: 1, text: 'Learn Vue' },

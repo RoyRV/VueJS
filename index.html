@@ -46,11 +46,18 @@
             <small>selected : {{listOfRadioButton}}</small>
         </div>
         <div>
-            <p>Dropdown</p>
+            <p>Dropdown-De array</p>
             <select v-model="selectedDropDownOption">
-                <option v-for="opt in optionsForDropDown" :value="opt">{{opt}}</option>
+                <option v-for="(opt, index) in optionsForDropDown" :value="opt">{{ index }} - {{ opt }}</option>
             </select>
             <small>selected : {{selectedDropDownOption}}</small>
+        </div>
+        <div>
+            <p>Dropdown-De array de objetos</p>
+            <select v-model="selectedDropDownOptionObject">
+                <option v-for="(item, index) in optionsDropDownObjectArray" :value="item.val">{{ index }} - {{ item.val }}</option>
+            </select>
+            <small>selected : {{selectedDropDownOptionObject}}</small>
         </div>
         <div>
             <p>Dropdown multiple</p>
