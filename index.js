@@ -26,7 +26,9 @@ var app = new Vue({
     executeSearch: executeSearch,
     grandparentStopClick: grandparentStopClick,
     parentStopClick:parentStopClick,
-    executeStopSearch : executeStopSearch
+    executeStopSearch : executeStopSearch,
+    executeRightClick : executeRightClick ,
+    executeLeftClick : executeLeftClick
   }
 })
 function cambiaText(texto, event) {
@@ -50,4 +52,11 @@ function parentStopClick (){
 }
 function grandparentStopClick (){
   console.log("grandparentStopClick");
+}
+
+function executeLeftClick(){
+  console.log("executeLeftClick");
+}
+function executeRightClick(){
+  console.log("executeRightClick");
 }

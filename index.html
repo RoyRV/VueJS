@@ -69,7 +69,7 @@
             <p>Prevent modifier</p>
             <div>
                 <form action="#" method="GET">
-                    <input  v-model="inputValue" id="txtInputValue" />
+                    <input v-model="inputValue" id="txtInputValue" />
                     <button type="submit" v-on:click.prevent="executeSearch">Search</button>
                 </form>
             </div>
@@ -83,6 +83,17 @@
                         Search
                     </button>
                 </div>
+            </div>
+        </div>
+        <div>
+            <p>mouse  click</p>
+            <div>
+                <button type="button" v-on:click.left="executeLeftClick">
+                    Left
+                </button>
+                <button type="button" v-on:click.right="executeRightClick">
+                    Right
+                </button>
             </div>
         </div>
     </div>
