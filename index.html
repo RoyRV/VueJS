@@ -103,7 +103,25 @@
                 </button>
             </div>
         </div>
+        <div>
+            <p>
+                Ejemplo de v-for y v-if
+            </p>
+                <input v-model="filtradorMonto" type="range" min="0" max="100">
+                <small>{{filtradorMonto}}</small>
+                <h4>Listado</h4>
+                <ul>
+                    <li v-for="item in listadoObjetosVForVIF"
+                        v-if="item.val < filtradorMonto">
+                        {{item.nombre}}
+                    </li>
+                </ul>
+                    
+                
+            </div>
+        </div>
     </div>
+    
     <script type="text/x-template" id="todoItem-template">
         <li># : {{todo.text}}</li>
     </script>

@@ -30,7 +30,15 @@ var app = new Vue({
       { id: 1, text: 'Learn Vue' },
       { id: 2, text: 'Build something awesome' }
     ],
-    inputValue: ''
+    inputValue: '',
+    filtradorMonto :0,
+    listadoObjetosVForVIF :[
+      {nombre : "nombre1",val : 1},
+      {nombre : "nombre2",val : 2},
+      {nombre : "nombre3",val : 3},
+      {nombre : "nombre4",val : 40},
+      {nombre : "nombre5",val : 80}
+    ]
   },
 
   methods: {
