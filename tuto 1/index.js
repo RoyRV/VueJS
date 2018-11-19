@@ -40,7 +40,6 @@ var app = new Vue({
       { nombre: "nombre3", val: 3 }
     ]
   },
-
   methods: {
     cambiaText: cambiaText,
     executeSearch: executeSearch,
@@ -50,9 +49,17 @@ var app = new Vue({
     executeRightClick: executeRightClick,
     executeLeftClick: executeLeftClick,
     sortClickList: sortClickList,
-    sortReversClickList: sortReversClickList
+    sortReversClickList: sortReversClickList,
+    updateElementList: updateElementList
+  },
+  filters : {
+    converToUpper : converToUpper
   }
 })
+
+function converToUpper(value) {
+  return value.toUpperCase();
+}
 
 function cambiaText(texto, event) {
   this.primerMensaje = texto;
@@ -90,4 +97,9 @@ function sortClickList() {
 }
 function sortReversClickList() {
   this.listadoObjetosVForVIF.reverse();
+}
+function updateElementList() {
+  console.log("update");
+  this.listadoObjetosVForVIF[0].val = 100;
+  console.log("this.listadoObjetosVForVIF",this.listadoObjetosVForVIF);
 }
