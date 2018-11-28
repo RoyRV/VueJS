@@ -1,6 +1,7 @@
 import availableParts from "../data/parts.js";
 export default {
   name: "RobotBuilder",
+  
   mounted() {
     console.log("component mounted");
   },
@@ -13,6 +14,7 @@ export default {
   data() {
     return {
       availableParts,
+      addedToCart: false,
       cart: [],
       selectedRobot: {
         head: {},
@@ -25,6 +27,7 @@ export default {
   },
   methods: {
     addToCart() {
+      this.addedToCart = true;
       const robot = this.selectedRobot;
       const cost =
         robot.head.cost +
@@ -35,7 +38,7 @@ export default {
       let _robot = Object.assign({}, robot, { cost });
       this.cart.push(_robot);
     },
-    handlePartSelected(){
+    handlePartSelected() {
       console.log("handlePartSelected");
     }
   },

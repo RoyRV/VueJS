@@ -5,24 +5,27 @@
         <ul>
           <li class="nav-item">
             <router-link exact class="nav-link" :to="{name:'Home'}">
-            <img class="logo" src="./assets/build-a-bot-logo.png">
-            Home
+              <img class="logo" src="./assets/build-a-bot-logo.png">
+              Home
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link exact class="nav-link" :to="{name:'Build'}">
-            build
-            </router-link>
-          </li> 
+            <router-link exact class="nav-link" :to="{name:'Build'}">build</router-link>
+          </li>
         </ul>
       </nav>
     </header>
-    <main>
-      <!-- <dashboard></dashboard> -->
-      <!-- <Test /> -->
-      <!-- <RobotBuilder /> -->
-      <router-view/>
-    </main>
+    <div class="container">
+      <aside class="aside">
+        <router-view name="sidebar" />
+      </aside>
+      <main>
+        <!-- <dashboard></dashboard> -->
+        <!-- <Test /> -->
+        <!-- <RobotBuilder /> -->
+        <router-view/>
+      </main>
+    </div>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
@@ -43,12 +46,13 @@ export default {
   margin-top: 60px;
 }
 main {
-  margin: 0, auto;
+  background-color: white;
+  width:  964px;
   padding: 30px;
-}
+} 
 header {
   background-color: #999;
-  width: 1084px;
+  width: 1184px;
   margin: 0 auto;
 }
 ul {
@@ -65,11 +69,22 @@ ul {
   vertical-align: middle;
   height: 30px;
 }
-.nav-link{
+.nav-link {
   text-decoration: none;
-  color:inherit;
+  color: inherit;
 }
-.router-link-active{
-  color:white;
+.router-link-active {
+  color: white;
+}
+.container {
+  display: flex;
+  margin: 10px auto 0 auto;
+  justify-content: center;
+}
+.aside {
+  padding: 30px;
+  background-color: #aaa;
+  width: 100px;
+  min-height: 300px;
 }
 </style>
