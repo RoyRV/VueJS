@@ -11,7 +11,7 @@
     </header>
     <main>
     <!-- <dashboard></dashboard> -->
-    <Test />
+    <!-- <Test /> -->
     <RobotBuilder />
     </main>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
@@ -20,14 +20,16 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue';
-import Test from './home/components/Test.vue';
+// import Test from './home/components/Test.vue';
 import Dashboard from './home/Dashboard.vue';
+// import PartSelector from './build/components/PartSelector.vue';
 import RobotBuilder from './build/RobotBuilder.vue';
 export default {
   name: 'app',
   components: {
     RobotBuilder,
-    Test
+    // Test,
+    // PartSelector,
     // HelloWorld,
   },
 };
