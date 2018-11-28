@@ -1,22 +1,24 @@
 <template>
   <div class="content">
     <div class="preview">
-      <div class="preview-content">
-        <div class="top-row">
-          <img :src="selectedRobot.head.src">
+      <CollapsibleSection>
+        <div class="preview-content">
+          <div class="top-row">
+            <img :src="selectedRobot.head.src">
+          </div>
+          <div class="middle-row">
+            <img :src="selectedRobot.leftArm.src" class="rotate-left">
+            <img :src="selectedRobot.torso.src">
+            <img :src="selectedRobot.rightArm.src" class="rotate-right">
+          </div>
+          <div class="bottom-row">
+            <img :src="selectedRobot.base.src">
+          </div>
         </div>
-        <div class="middle-row">
-          <img :src="selectedRobot.leftArm.src" class="rotate-left">
-          <img :src="selectedRobot.torso.src">
-          <img :src="selectedRobot.rightArm.src" class="rotate-right">
-        </div>
-        <div class="bottom-row">
-          <img :src="selectedRobot.base.src">
-        </div>
-      </div>
-       <button class="add-to-cart" v-on:click="addToCart()">Agregar</button>
+      </CollapsibleSection>
+      <button class="add-to-cart" v-on:click="addToCart()">Agregar</button>
     </div>
-   
+
     <div class="top-row">
       <!-- <div class="top part" :class="{'sale-border':selectedRobot.head.onSale}"> -->
       <!-- <div class="robot-name">
@@ -78,6 +80,7 @@
 
 <script>
 import PartSelector from "./components/PartSelector.vue";
+import CollapsibleSection from '../shared/CollapsibleSection.vue';
 import availableParts from "../data/parts.js";
 export default {
   name: "RobotBuilder",
@@ -88,7 +91,8 @@ export default {
     console.log("component created");
   },
   components: {
-    PartSelector
+    PartSelector,
+    CollapsibleSection
   },
   data() {
     return {
