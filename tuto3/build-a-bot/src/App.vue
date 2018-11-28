@@ -1,5 +1,14 @@
 <template>
   <div id="app">
+    <div>
+      <h1>Root foo : {{rootFoo}}</h1>
+      <h2>Robot foo : {{robotsFoo}}</h2>
+      <h3>Users foo : {{usersFoo}}</h3>
+      <br/>
+      <h1>Root Getter foo : {{rootGetterFoo}}</h1>
+      <h2>Robot Getter foo : {{robotsGetterFoo}}</h2>
+      <h3>Users Getter foo : {{usersGetterFoo}}</h3>
+    </div>
     <header>
       <nav>
         <ul>
@@ -40,6 +49,24 @@ export default {
   computed: {
     cart() {
       return this.$store.state.robots.cart;
+    },
+    rootFoo(){
+      return this.$store.state.foo;
+    },
+    robotsFoo(){
+      return this.$store.state.robots.foo;
+    },
+    usersFoo(){
+      return this.$store.state.users.foo;
+    },
+    rootGetterFoo(){
+      return this.$store.getters.foo;
+    },
+    robotsGetterFoo(){
+      return this.$store.getters['robots/foo'];
+    },
+    usersGetterFoo(){
+      return this.$store.getters['users/foo'];
     }
   }
 };

@@ -1,8 +1,10 @@
 import axios from 'axios';
 
 export default {
+  namespaced: true,
   state: {
     user: null,
+    foo: 'users-foo',
   },
   mutations: {
     updateCurrentUser(state, user) {
@@ -10,6 +12,9 @@ export default {
     },
   },
   getters: {
+    foo(state, getters, rootState) {
+      return `user-getter/${rootState.foo}`;
+    }
   },
   actions: {
     signIn({ commit }) {
