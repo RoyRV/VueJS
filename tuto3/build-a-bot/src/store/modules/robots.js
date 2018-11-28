@@ -4,6 +4,7 @@ import axios from 'axios';
 const baseURL = "/api/";
 
 export default {
+    namespaced: true,
     state: {
         cart: [],
         parts: null,

@@ -81,7 +81,7 @@ export default {
   },
   created() {
     console.log("component created");
-    this.$store.dispatch('getParts');
+    this.$store.dispatch('robots/getParts');
   },
   components: {
     PartSelector,
@@ -112,8 +112,8 @@ export default {
         robot.base.cost;
       let _robot = Object.assign({}, robot, { cost });
       // this.cart.push(_robot);
-      console.log("_robot",_robot);
-      this.$store.dispatch('addRobotToCart',_robot)
+
+      this.$store.dispatch('robots/addRobotToCart',_robot)
         .then(()=>{
           this.$router.push('/cart');
         });
