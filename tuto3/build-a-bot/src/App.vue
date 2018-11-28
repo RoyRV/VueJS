@@ -4,48 +4,46 @@
       <nav>
         <ul>
           <li class="nav-item">
-            <img class="logo" src="./assets/build-a-bot-logo.png" />
-            </li>
+            <router-link exact class="nav-link" :to="{name:'Home'}">
+            <img class="logo" src="./assets/build-a-bot-logo.png">
+            Home
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link exact class="nav-link" :to="{name:'Build'}">
+            build
+            </router-link>
+          </li> 
         </ul>
       </nav>
     </header>
     <main>
-    <!-- <dashboard></dashboard> -->
-    <!-- <Test /> -->
-    <RobotBuilder />
+      <!-- <dashboard></dashboard> -->
+      <!-- <Test /> -->
+      <!-- <RobotBuilder /> -->
+      <router-view/>
     </main>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue';
-// import Test from './home/components/Test.vue';
-import Dashboard from './home/Dashboard.vue';
-// import PartSelector from './build/components/PartSelector.vue';
-import RobotBuilder from './build/RobotBuilder.vue';
 export default {
-  name: 'app',
-  components: {
-    RobotBuilder,
-    // Test,
-    // PartSelector,
-    // HelloWorld,
-  },
+  name: "app"
 };
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
   color: #2c3e50;
   margin-top: 60px;
 }
-main  {
-  margin:  0,auto;
+main {
+  margin: 0, auto;
   padding: 30px;
 }
 header {
@@ -66,5 +64,12 @@ ul {
 .logo {
   vertical-align: middle;
   height: 30px;
+}
+.nav-link{
+  text-decoration: none;
+  color:inherit;
+}
+.router-link-active{
+  color:white;
 }
 </style>
