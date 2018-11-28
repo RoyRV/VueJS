@@ -113,7 +113,10 @@ export default {
       let _robot = Object.assign({}, robot, { cost });
       // this.cart.push(_robot);
       console.log("_robot",_robot);
-      this.$store.commit('addRobotToCart',_robot);
+      this.$store.dispatch('addRobotToCart',_robot)
+        .then(()=>{
+          this.$router.push('/cart');
+        });
     }
   },
   computed: {
@@ -125,7 +128,7 @@ export default {
       };
     },
     availableParts(){
-      return this.$store.state.parts;
+      return this.$store.state.robots.parts;
     }
   }
 };
