@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div v-if="availableParts" class="content">
     <div class="preview">
       <CollapsibleSection>
         <div class="preview-content">
@@ -53,27 +53,8 @@
       <PartSelector
         :parts="availableParts.bases"
         position="bottom"
-        @partSelected="part=>selectedRobot.base=part"
+        @partSelected="part=>selectedRobot.base=part" 
       />
-    </div>
-    <div>
-      <h1>Cart</h1>
-      <div style="text-alingn:center">
-        <table>
-          <thead>
-            <tr>
-              <th>Robot</th>
-              <th class="cost">Cost</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(robot,index) in cart" :key="index">
-              <td>{{robot.head.title}}</td>
-              <td>{{robot.cost}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
     </div>
   </div>
 </template>
@@ -81,7 +62,7 @@
 <script>
 import PartSelector from "./components/PartSelector.vue";
 import CollapsibleSection from '../shared/CollapsibleSection.vue';
-import availableParts from "../data/parts.js";
+
 export default {
   name: "RobotBuilder",
   beforeRouteLeave(to, from, next) {
@@ -100,6 +81,7 @@ export default {
   },
   created() {
     console.log("component created");
+    this.$store.dispatch('getParts');
   },
   components: {
     PartSelector,
@@ -107,7 +89,6 @@ export default {
   },
   data() {
     return {
-      availableParts,
       addedToCart : false,
       cart: [],
       selectedRobot: {
@@ -130,7 +111,9 @@ export default {
         robot.torso.cost +
         robot.base.cost;
       let _robot = Object.assign({}, robot, { cost });
-      this.cart.push(_robot);
+      // this.cart.push(_robot);
+      console.log("_robot",_robot);
+      this.$store.commit('addRobotToCart',_robot);
     }
   },
   computed: {
@@ -140,6 +123,9 @@ export default {
           ? "3px solid red"
           : "3px solid blue"
       };
+    },
+    availableParts(){
+      return this.$store.state.parts;
     }
   }
 };

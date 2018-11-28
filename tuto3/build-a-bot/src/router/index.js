@@ -14,6 +14,7 @@ import RobotBases from "../parts/RobotBases.vue";
 import SidebarStandard from "../sidebars/SidebarStandard.vue";
 import SidebarBuild from "../sidebars/SidebarBuild.vue";
 
+import ShoppingCart from '../cart/ShoppingCart.vue';
 
 Vue.use(Router);
 export default new Router({
@@ -23,7 +24,7 @@ export default new Router({
             path: '/',
             name: 'Home',
             components: {
-                default : HomePage,
+                default: HomePage,
                 sidebar: SidebarStandard
             }
         },
@@ -31,16 +32,16 @@ export default new Router({
             path: '/build',
             name: 'Build',
             components: {
-                default : RobotBuilder,
+                default: RobotBuilder,
                 sidebar: SidebarBuild
             }
         },
         {
-            path:'/parts/browse',
+            path: '/parts/browse',
             name: 'BrowseParts',
-            component:BrowseParts,
-            
-            children : [
+            component: BrowseParts,
+
+            children: [
                 {
                     path: 'heads',
                     name: 'BrowseHeads',
@@ -67,11 +68,16 @@ export default new Router({
             path: '/parts/:partType/:id',
             name: 'Parts',
             component: PartInfo,
-            props:true,
-            beforeEnter(to,from,next) {
+            props: true,
+            beforeEnter(to, from, next) {
                 let isValidId = Number.isInteger(Number(to.params.id));
                 next(isValidId);
             }
+        },
+        {
+            path :'/cart',
+            name : 'Cart',
+            component : ShoppingCart
         }
     ]
 })

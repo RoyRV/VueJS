@@ -11,9 +11,11 @@
 </template>
 
 <script>
-import parts from "../data/parts";
+
+import getPartsMixin from './get-parts-mixin';
 export default {
   name: "PartInfo",
+  mixins : [ getPartsMixin],
   props: {
     partType: { type: String },
     id: {
@@ -27,12 +29,12 @@ export default {
     part() {
       let partType = this.$route.params.partType;
       let id = this.$route.params.id;
-      let listOfParts  = parts[partType];
+      let listOfParts  = this.parts[partType];
       if(listOfParts)
-        return listOfParts.find(part => part.id == Number(id));
+        return listOfParts.find(part => part.id === Number(id));
       return null;
-    }
-  }
+    },
+  },
 };
 </script>
 
