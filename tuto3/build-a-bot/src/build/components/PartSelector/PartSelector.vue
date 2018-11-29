@@ -1,4 +1,7 @@
-
+<template src='./PartSelector.html'></template>
+<style src="./PartSelector.css"></style>
+ 
+<script> 
 function getPreviousValidIndex(index, length) {
     const deprecatedIndex = index - 1;
     return deprecatedIndex < 0 ? length - 1 : deprecatedIndex;
@@ -63,3 +66,5 @@ export default {
         },
     },
 };
+</script>
+

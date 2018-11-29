@@ -12,7 +12,7 @@
 
 <script>
 
-import getPartsMixin from './get-parts-mixin';
+import getPartsMixin from '../get-parts-mixin';
 export default {
   name: "PartInfo",
   mixins : [ getPartsMixin],

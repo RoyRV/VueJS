@@ -1,0 +1,15 @@
+td, th {
+    padding: 5px;
+  }
+  .robot-title {
+    text-align: left;
+    padding-right: 200px;
+  }
+  .cost {
+    text-align: right;
+  }
+  .saleItems{
+    margin-top: 50px;
+    font-size:18px;
+    color : red;
+  }

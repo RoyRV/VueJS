@@ -12,7 +12,7 @@
 
 <script>
 // import parts from '../data/parts';
-import getPartsMixin from './get-parts-mixin';
+import getPartsMixin from '../get-parts-mixin';
 export default {
   name: 'RobotArms',
   mixins : [getPartsMixin]

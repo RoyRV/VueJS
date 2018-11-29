@@ -1,20 +1,20 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import HomePage from '../home/components/Test.vue'
-import RobotBuilder from '../build/RobotBuilder.vue';
-import PartInfo from "../parts/PartInfo.vue";
-import BrowseParts from '../parts/BrowseParts.vue';
+import HomePage from '../home/components/Test/Test.vue'
+import RobotBuilder from '../build/RobotBuilder/RobotBuilder.vue';
+import PartInfo from "../parts/PartInfo/PartInfo.vue";
+import BrowseParts from '../parts/BrowseParts/BrowseParts.vue';
 
-import RobotHeads from "../parts/RobotHeads.vue";
-import RobotTorsos from "../parts/RobotTorsos.vue";
-import RobotArms from "../parts/RobotArms.vue";
-import RobotBases from "../parts/RobotBases.vue";
+import RobotHeads from "../parts/RobotHeads/RobotHeads.vue";
+import RobotTorsos from "../parts/RobotTorsos/RobotTorsos.vue";
+import RobotArms from "../parts/RobotArms/RobotArms.vue";
+import RobotBases from "../parts/RobotBases/RobotBases.vue";
 
 import SidebarStandard from "../sidebars/SidebarStandard.vue";
 import SidebarBuild from "../sidebars/SidebarBuild.vue";
 
-import ShoppingCart from '../cart/ShoppingCart.vue';
+import ShoppingCart from '../cart/ShoppingCart/ShoppingCart.vue';
 
 Vue.use(Router);
 export default new Router({

@@ -1,3 +1,7 @@
+<template src='./Test.html'></template>
+<style src="./Test.css" scoped></style>
+
+<script>
 export default {
     name: "Test",
     data() {
@@ -7,3 +11,4 @@ export default {
         }
     }
 }
+</script>

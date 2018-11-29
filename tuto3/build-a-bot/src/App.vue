@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div>
+    <!-- <div>
       <h1>Root foo : {{rootFoo}}</h1>
       <h2>Robot foo : {{robotsFoo}}</h2>
       <h3>Users foo : {{usersFoo}}</h3>
@@ -8,7 +8,7 @@
       <h1>Root Getter foo : {{rootGetterFoo}}</h1>
       <h2>Robot Getter foo : {{robotsGetterFoo}}</h2>
       <h3>Users Getter foo : {{usersGetterFoo}}</h3>
-    </div>
+    </div> -->
     <header>
       <nav>
         <ul>
