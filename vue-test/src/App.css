@@ -1,0 +1,140 @@
+html,
+body {
+    height: 100%;
+}
+
+#app {
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+}
+
+.main-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.main-container .menu-container {
+    height: 100%;
+    display: flex;
+}
+
+.main-container .menu-container .sidebarx {
+    width: 100%;
+}
+
+.main-container .menu-container .sidebarx .vs-sidebar--background {
+    display: none;
+}
+
+.main-container .menu-container .sidebarx .vs-sidebar-reduce .vs-sidebar--item {
+    padding: unset;
+}
+
+.main-container .menu-container .sidebarx .vs-sidebar--items {
+    padding: 0;
+}
+
+.main-container .menu-container .sidebarx .header-sidebar {
+    height: 3.5em;
+    background: #076388;
+    color: white;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.main-container .menu-container .sidebarx .header-sidebar>span {
+    text-align: center;
+    padding: 0 3em;
+}
+
+.main-container .menu-container .sidebarx .vs-sidebar--item {
+    padding: .5em 2em .5em 1em;
+    display: flex;
+    height: 50px;
+}
+
+.main-container .menu-container .sidebarx .vs-sidebar--item>a {
+    width: 100%;
+}
+
+.main-container .menu-container .sidebarx .vs-sidebar--item>a>i {
+    flex: 0 0 20%;
+    font-size: 17px;
+}
+
+.main-container .menu-container .sidebarx .vs-sidebar--item>a>a {
+    padding: 0;
+    text-align: left;
+    padding-left: 1em;
+}
+
+.main-container .menu-container .sidebarx .vs-sidebar--item>a>a>span {
+    font-size: 15px;
+}
+
+.main-container .menu-container .sidebarx .header-sidebar .fix-menu-button {
+    border: none;
+    font-size: .5em;
+    padding: 0;
+    margin: 0;
+    color: white;
+    background: none;
+}
+
+.main-container .menu-container .sidebarx .header-sidebar .fix-menu-button>i {
+    font-size: 2em;
+}
+
+.main-container .body-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main-container .body-container .top-bar {
+    background: #076388;
+    min-height: 3.5em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.main-container .body-container .top-bar .left-side {
+    flex-grow: 1;
+}
+
+.main-container .top-bar .left-side .hamburger-button {
+    background: #076388;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+.main-container .body-container .top-bar .right-side {
+    color: white;
+}
+
+.main-container .body-container .top-bar .right-side button {
+    color: white;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+}
+
+.main-container .body-container .top-bar .right-side button>i {
+    font-size: 1.5em;
+}
+
+.vs-icon{
+    font-size: 16px !important;
+}

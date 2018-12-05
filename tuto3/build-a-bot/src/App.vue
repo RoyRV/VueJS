@@ -123,9 +123,9 @@ ul {
   justify-content: center;
 }
 .aside {
-  padding: 30px;
+  padding: 10px;
   background-color: #aaa;
-  width: 100px;
+  width: 180px;
   min-height: 300px;
 }
 .cart-items {

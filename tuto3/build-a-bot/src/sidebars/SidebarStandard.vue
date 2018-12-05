@@ -12,7 +12,11 @@ export default {
 
 <style scoped>
 .sidebar{
-    font-size: 50px;
-    transform: rotate(90deg);
+       font-size: 50px;
+    color: green;
+    width: 300px;
+    position: relative;
+    top: 0;
+    display: contents;
 }
 </style>
