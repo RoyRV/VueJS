@@ -34,7 +34,10 @@ export default {
       };
     },
     availableParts(){
-      return this.$store.state.robots.parts;
+      // console.log("robot-builder-available");
+      let parts = this.$store.state.robots.parts;
+      // console.log("parts",parts);
+      return parts;
     }
   },
   methods: {
@@ -68,10 +71,10 @@ export default {
     }
   }, 
   mounted() {
-    console.log("component mounted");
+    // console.log("component mounted");
   },
   created() {
-    console.log("component created");
+    // console.log("component created");
     this.$store.dispatch('robots/getParts');
   },
 };

@@ -20,9 +20,12 @@ export default {
     },
     actions: {
         getParts({ commit }) {
+            // console.log("robots-getParts");
             let url = baseURL + "parts";
             axios.get(url)
-                .then(result => commit('updateParts', result.data))
+                .then(result => {
+                    commit('updateParts', result.data)
+                })
                 .catch(console.error);
         },
         addRobotToCart({commit,state},robot){
