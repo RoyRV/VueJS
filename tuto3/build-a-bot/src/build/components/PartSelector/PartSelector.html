@@ -1,4 +1,5 @@
 <div class="part" :class="position">
+    <!-- {{pinPadding}} -->
     <!-- <router-link :to="{
                name: 'Parts',
                params:{
@@ -9,6 +10,9 @@
    <img @click="showPartInfo()" :src="selectedPart.src" title="arm">
    <button @click="selectPreviousPart()" class="prev-selector"></button>
    <button @click="selectNextPart()" class="next-selector"></button>
-   <span v-pin class="sale" v-show="selectedPart.onSale">Sale!</span>
+   <!-- tipo 1-->
+   <!-- <span v-pin:position.bottom.left class="sale" v-show="selectedPart.onSale">Sale!</span> -->
+   <!-- tipo 2-->
+   <span @click="pinPadding='30px'" v-pin="{ bottom : pinPadding, right : pinPadding, position:'absolute'}" class="sale" v-show="selectedPart.onSale">Sale!</span> 
  <!-- </router-link> -->
  </div>
