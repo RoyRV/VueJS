@@ -4,7 +4,7 @@
       <h1>Root foo : {{rootFoo}}</h1>
       <h2>Robot foo : {{robotsFoo}}</h2>
       <h3>Users foo : {{usersFoo}}</h3>
-      <br/>
+      <br>
       <h1>Root Getter foo : {{rootGetterFoo}}</h1>
       <h2>Robot Getter foo : {{robotsGetterFoo}}</h2>
       <h3>Users Getter foo : {{usersGetterFoo}}</h3>
@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import { mapState , mapGetters } from "vuex";
+import { mapState, mapGetters } from "vuex";
 export default {
   name: "app",
   computed: {
@@ -56,7 +56,12 @@ export default {
     ...mapState("user", {
       usersFoo: "foo"
     }),
-
+    ...mapGetters({
+      rootGetterFoo: "foo"
+    }),
+    ...mapGetters("robots", {
+      robotsGetterFoo: "foo"
+    }),
     cart() {
       return this.$store.state.robots.cart;
     },
@@ -64,12 +69,7 @@ export default {
     usersFoo() {
       return this.$store.state.users.foo;
     },
-    rootGetterFoo() {
-      return this.$store.getters.foo;
-    },
-    robotsGetterFoo() {
-      return this.$store.getters["robots/foo"];
-    },
+
     usersGetterFoo() {
       return this.$store.getters["users/foo"];
     }

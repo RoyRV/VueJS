@@ -4,7 +4,7 @@
 <script>
 import PartSelector from "../components/PartSelector/PartSelector.vue";
 import CollapsibleSection from '../../shared/CollapsibleSection/CollapsibleSection.vue';
-
+import  { mapActions } from 'vuex';
 export default {
   name: "RobotBuilder",
   // props : {};
@@ -41,6 +41,7 @@ export default {
     }
   },
   methods: {
+    ...mapActions('robots',['getParts','addRobotToCart']),
     addToCart() {
       this.addedToCart=true;
       const robot = this.selectedRobot;
@@ -53,7 +54,8 @@ export default {
       let _robot = Object.assign({}, robot, { cost });
       // this.cart.push(_robot);
 
-      this.$store.dispatch('robots/addRobotToCart',_robot)
+      // this.$store.dispatch('robots/addRobotToCart',_robot)
+      this.addRobotToCart(_robot)
         .then(()=>{
           this.$router.push('/cart');
         });
@@ -75,7 +77,8 @@ export default {
   },
   created() {
     // console.log("component created");
-    this.$store.dispatch('robots/getParts');
+    // this.$store.dispatch('robots/getParts');
+    this.getParts();
   },
 };
 </script>
