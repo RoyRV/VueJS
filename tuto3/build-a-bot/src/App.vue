@@ -44,29 +44,34 @@
 </template>
 
 <script>
+import { mapState , mapGetters } from "vuex";
 export default {
   name: "app",
   computed: {
+    //adding mapState
+    ...mapState({
+      rootFoo: "foo",
+      robotsFoo: state => state.robots.foo
+    }),
+    ...mapState("user", {
+      usersFoo: "foo"
+    }),
+
     cart() {
       return this.$store.state.robots.cart;
     },
-    rootFoo(){
-      return this.$store.state.foo;
-    },
-    robotsFoo(){
-      return this.$store.state.robots.foo;
-    },
-    usersFoo(){
+
+    usersFoo() {
       return this.$store.state.users.foo;
     },
-    rootGetterFoo(){
+    rootGetterFoo() {
       return this.$store.getters.foo;
     },
-    robotsGetterFoo(){
-      return this.$store.getters['robots/foo'];
+    robotsGetterFoo() {
+      return this.$store.getters["robots/foo"];
     },
-    usersGetterFoo(){
-      return this.$store.getters['users/foo'];
+    usersGetterFoo() {
+      return this.$store.getters["users/foo"];
     }
   }
 };
