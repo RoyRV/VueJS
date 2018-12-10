@@ -1,0 +1,19 @@
+vs-component{
+    display: inline-block;
+}
+
+.examplex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .examplex .a-icon {
+    outline: none;
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .examplex .a-icon i {
+    font-size: 18px;
+  }
