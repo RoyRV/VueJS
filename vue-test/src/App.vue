@@ -11,38 +11,23 @@
         v-bind:reduce="onlyIcons"
       >
         <div class="header-sidebar">
-          <span v-if="!onlyIcons">TEST MENU TITLE</span>
+          <span v-if="!onlyIcons">TESTING LONGER MENU TITLE</span>
           <vs-button
             class="fix-menu-button"
             @click="onlyIcons=!onlyIcons"
-            icon="radio_button_unchecked"
+            v-bind:icon="!onlyIcons ? 'chevron_left' : 'chevron_right'"
+            v-if="!isMobile()"
           />
         </div>
 
         <vs-sidebar-item
-          index="1"
-          icon="question_answer"
+          v-for="(menuItem, index) in MenuList"
+          v-bind:key="index"
+          v-bind:index="index + 1"
+          v-bind:icon="menuItem.icon"
         >
-          <router-link :to="{name:'Test'}">
-            <span>Dashboard</span>
-          </router-link>
-        </vs-sidebar-item>
-
-        <vs-sidebar-item
-          index="2"
-          icon="gavel"
-        >
-          <router-link :to="{name:'Home'}">
-            <span>Attributes</span>
-          </router-link>
-        </vs-sidebar-item>
-
-        <vs-sidebar-item
-          index="3"
-          icon="gavel"
-        >
-          <router-link :to="{name:'Help'}">
-            <span>Help</span>
+          <router-link :to="{name:menuItem.routeName}">
+            <span>{{menuItem.menuTtitle}}</span>
           </router-link>
         </vs-sidebar-item>
 
@@ -82,12 +67,16 @@
 </template>
 
 <script>
+
+import { MenuList } from './utils/menuList';
+
 export default {
   name: "app",
   data: () => ({
     active: false,
     windowWidth: window.innerWidth,
-    onlyIcons: false
+    onlyIcons: false,
+    MenuList: MenuList
   }),
   methods: {
     handleWindowResize(event) {

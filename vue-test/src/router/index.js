@@ -5,6 +5,7 @@ import HomePage from '../pages/Dashboard/DashboardPage.vue';
 import Page2 from '../pages/Test/TestPage.vue';
 import NotFoundPage from '../pages/NotFound/NotFoundPage.vue';
 import HelpPage from '../pages/HelpSection/HelpPage/HelpPage.vue';
+import DropdownPage from '../pages/HelpSection/DropdownPage/DropdownPage.vue';
 
 //helpPages
 import CheckboxPage from '../pages/HelpSection/CheckboxPage/CheckboxPage.vue'
@@ -25,6 +26,9 @@ export default new Router({
         {
           path: '/help/checkbox', name: 'helpCheckbox', component: CheckboxPage
         },
+        {
+          path: '/help/dropdown', name: 'helpDropdown', component: DropdownPage
+        }
       ]
     },
     {

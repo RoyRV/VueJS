@@ -48,11 +48,12 @@ body {
     align-items: center;
     justify-content: center;
     display: flex;
+    padding: 1em;
 }
 
 .main-container .menu-container .sidebarx .header-sidebar>span {
     text-align: center;
-    padding: 0 3em;
+    white-space: nowrap;
 }
 
 .main-container .menu-container .sidebarx .vs-sidebar--item {
@@ -90,7 +91,7 @@ body {
 }
 
 .main-container .menu-container .sidebarx .header-sidebar .fix-menu-button>i {
-    font-size: 2em;
+    font-size: 1.5em !important;
 }
 
 .main-container .body-container {
@@ -133,6 +134,10 @@ body {
 
 .main-container .body-container .top-bar .right-side button>i {
     font-size: 1.5em;
+}
+
+.main-container .body-container .main-content main .container {
+    width: unset !important;
 }
 
 .vs-icon{
