@@ -10,11 +10,11 @@ function getNextValidIndex(index, length) {
     const incrementedIndex = index + 1;
     return incrementedIndex > length - 1 ? 0 : incrementedIndex;
 }
-import pinDirective from '../../../shared/directives/pin-directive'
+// import pinDirective from '../../../shared/directives/pin-directive'
 export default {
-    directives : {
-        pin : pinDirective
-    },
+    // directives : {
+    //     pin : pinDirective
+    // },
     props: {
         'parts': {
             type: Array,
