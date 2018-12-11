@@ -44,9 +44,13 @@
 </template>
 
 <script>
+
 import { mapState, mapGetters } from "vuex";
 export default {
   name: "app",
+  created(){
+    console.log(process.env.VUE_APP_TEST)
+    },
   computed: {
     //adding mapState
     ...mapState({
