@@ -1,17 +1,27 @@
 export const MenuList = [
     {
-        routeName: 'Test',
-        menuTtitle: 'Dashboard',
-        icon: 'question_answer'
+        routeName: 'Hardware',
+        menuTtitle: 'Hardware',
+        icon: 'devices_other'
     },
     {
-        routeName: 'Home',
-        menuTtitle: 'Attributes',
+        routeName: 'Consumo',
+        menuTtitle: 'Consumo',
+        icon: 'shopping_cart'
+    },
+    {
+        routeName: 'Clientes',
+        menuTtitle: 'Clientes',
+        icon: 'people'
+    },
+    {
+        routeName: 'AbrirCaso',
+        menuTtitle: 'Abrir un Caso',
         icon: 'gavel'
     },
     {
-        routeName: 'Help',
-        menuTtitle: 'Help',
-        icon: 'attachment'
+        routeName: 'Contactanos',
+        menuTtitle: 'Contactanos',
+        icon: 'contact_mail'
     }
 ];

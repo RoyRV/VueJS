@@ -11,7 +11,7 @@
         v-bind:reduce="onlyIcons"
       >
         <div class="header-sidebar">
-          <span v-if="!onlyIcons">TESTING LONGER MENU TITLE</span>
+          <span v-if="!onlyIcons">Cloudbox</span>
           <vs-button
             class="fix-menu-button"
             @click="onlyIcons=!onlyIcons"
@@ -67,8 +67,7 @@
 </template>
 
 <script>
-
-import { MenuList } from './utils/menuList';
+import { MenuList } from "./utils/menuList";
 
 export default {
   name: "app",
