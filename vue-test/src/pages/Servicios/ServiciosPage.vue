@@ -11,7 +11,7 @@
           vs-align="center"
           vs-w="12"
         >
-          <h3>Hardware</h3>
+          <h3>Servicios</h3>
         </vs-col>
       </vs-row>
       <vs-row vs-w="12">
@@ -22,14 +22,24 @@
         >
           <div class="">
             <vs-tabs>
-              <vs-tab vs-label="Consumo">
+              <vs-tab vs-label="MANTENIMIENTO PREVENTIVO">
                 <div class="con-tab-ejemplo">
-                  LAPTOS , DESKTOPS , PRINTERS
+                  PREVENTIVO : SOLICITA COTIZACION
                 </div>
               </vs-tab>
-              <vs-tab vs-label="Infraestructura">
+              <vs-tab vs-label="MANTENIMIENTO CORRECTIVO">
                 <div class="con-tab-ejemplo">
-                  SERVIDORES,STORAGE, NETWORKING,UPS
+                  CORRECTIVO : SOLICITA COTIZACION
+                </div>
+              </vs-tab>
+              <vs-tab vs-label="INSTALACION Y CONFIGURACION">
+                <div class="con-tab-ejemplo">
+                  SERVIDORES , STORAGE , NETWORKING
+                </div>
+              </vs-tab>
+              <vs-tab vs-label="VISITA TECNICA">
+                <div class="con-tab-ejemplo">
+                  FORMULARIO PARA VISITA
                 </div>
               </vs-tab>
             </vs-tabs>
@@ -42,7 +52,7 @@
 
 <script>
 export default {
-  name: "Hardware"
+  name: "Servicios"
 };
 </script>
 

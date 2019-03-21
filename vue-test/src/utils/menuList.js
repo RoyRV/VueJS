@@ -5,8 +5,8 @@ export const MenuList = [
         icon: 'devices_other'
     },
     {
-        routeName: 'Consumo',
-        menuTtitle: 'Consumo',
+        routeName: 'Servicios',
+        menuTtitle: 'Servicios',
         icon: 'shopping_cart'
     },
     {

@@ -3,7 +3,7 @@ import Router from 'vue-router';
 //pages
 import HomePage from '../pages/Dashboard/DashboardPage.vue';
 import HardwarePage from '../pages/Hardware/HardwarePage.vue';
-import ConsumoPage from '../pages/Consumo/ConsumoPage.vue';
+import ServiciosPage from '../pages/Servicios/ServiciosPage.vue';
 import ClientesPage from '../pages/Clientes/ClientesPage.vue';
 import AbrirCasoPage from '../pages/AbrirCaso/AbrirCasoPage.vue';
 import ContactanosPage from '../pages/Contactanos/ContactanosPage.vue';
@@ -23,7 +23,7 @@ export default new Router({
       path: '/hardware', name: 'Hardware', component: HardwarePage
     }, 
     {
-      path: '/consumo', name: 'Consumo', component: ConsumoPage
+      path: '/servicios', name: 'Servicios', component: ServiciosPage
     }, 
     {
       path: '/clientes', name: 'Clientes', component: ClientesPage
